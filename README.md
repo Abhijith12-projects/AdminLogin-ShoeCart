@@ -7,3 +7,5 @@ This app provides admin the rights to add individual items to the online app wit
 Under the list tab- admin reserves the right to update items and even deleting them.
 
 Tools used: React Native ,expo, expo mobile app to preview the development, AsyncStorage to store data permanently
+
+Please download the mp4 to preview app
