@@ -14,4 +14,4 @@ The users can view the list of items added by the admin.But the users cannot mod
 
 Tools used: React Native ,expo, expo mobile app to preview the development, AsyncStorage to store data permanently
 
-Please download the mp4 to preview app
+Please download the shoeCartApp.mp4 to preview app
