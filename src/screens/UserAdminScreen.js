@@ -1,48 +1,53 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import CustomButton from "../../components/CustomButton";
+import { StyleSheet, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const UserAdminScreen = () => {
   const navigation = useNavigation();
 
-  const userPressHandler = () => {
-    console.log("user pressed");
+  const handleUserLogin = () => {
     navigation.navigate("UserLogin");
   };
-  const adminPressHandler = () => {
-    console.log("admin pressed");
+
+  const handleAdminLogin = () => {
     navigation.navigate("Login");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Select Login method</Text>
-      <View style={styles.btnContainer}>
-        <View style={styles.btn}>
-          <CustomButton title="User Login" onPress={userPressHandler} />
-        </View>
-        <View style={styles.btn}>
-          <CustomButton title="Admin Login" onPress={adminPressHandler} />
-        </View>
-      </View>
+      <Text style={styles.title}>Choose your sign in option</Text>
+      <Pressable style={styles.button} onPress={handleUserLogin}>
+        <Text style={styles.buttonText}>User Login</Text>
+      </Pressable>
+      <Pressable style={styles.button} onPress={handleAdminLogin}>
+        <Text style={styles.buttonText}>Admin Login</Text>
+      </Pressable>
     </View>
   );
 };
 
-export default UserAdminScreen;
-
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
-  title: { fontSize: 18, fontWeight: "bold" },
-  btnContainer: {
-    width: "100%",
+  container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  btn: {
-    width: "80%",
+  button: {
+    backgroundColor: "#af0ccf",
+    padding: 10,
+    borderRadius: 10,
     marginVertical: 10,
-    marginLeft: 50,
+    width: "80%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#ffffff",
+    fontSize: 18,
+  },
+  title: {
+    fontSize: 20,
   },
 });
+
+export default UserAdminScreen;

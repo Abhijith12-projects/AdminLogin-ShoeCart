@@ -5,11 +5,13 @@ import { Image } from "react-native";
 import Items from "../../tabs/Items";
 import AddItems from "../../tabs/AddItems";
 import Notification from "../../tabs/Notification";
+import CustomHeader from "../../components/ui/CustomHeader";
 
 const AdminDashboard = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   return (
     <View style={styles.container}>
+      <CustomHeader title={"Welcome Admin"} />
       {selectedTab === 0 ? (
         <Items />
       ) : selectedTab === 1 ? (
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2dabf",
   },
   bottonTab: {
-    height: "100%",
+    height: "80%",
     width: "20%",
     justifyContent: "center",
     alignContent: "center",

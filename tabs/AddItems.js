@@ -52,7 +52,7 @@ const AddItems = () => {
       console.log("Item added and saved to AsyncStorage.");
       setTitle("");
       setBrand("");
-      setCost("0");
+      setCost("");
       setImageData(null);
     } catch (error) {
       console.error("Error saving item:", error);
@@ -87,6 +87,7 @@ const AddItems = () => {
           placeholder="Enter cost in rupees"
           style={styles.inputTitle}
           value={cost}
+          keyboardType="number-pad"
           onChangeText={(text) => setCost(text)}
         />
         <Pressable style={styles.imagebtn} onPress={pickImageAsync}>
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 100,
     backgroundColor: "#e7ad27",
   },
 });
